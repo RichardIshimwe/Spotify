@@ -7,6 +7,7 @@ import 'package:spotify/common/widgets/button/basic_app_button.dart';
 import 'package:spotify/core/configs/assets/app_images.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
 import 'package:spotify/core/configs/theme/app_colors.dart';
+import 'package:spotify/presentation/auth/pages/signup_or_signin.dart';
 import 'package:spotify/presentation/choose_mode/bloc/theme_cubit.dart';
 
 class ChooseModePage extends StatelessWidget {
@@ -55,7 +56,6 @@ class ChooseModePage extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            print("Dark Mode is printed..");
                             context
                                 .read<ThemeCubit>()
                                 .updateTheme(ThemeMode.dark);
@@ -95,7 +95,6 @@ class ChooseModePage extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                             print("light Mode");
                             context
                                 .read<ThemeCubit>()
                                 .updateTheme(ThemeMode.light);
@@ -141,7 +140,7 @@ class ChooseModePage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (BuildContext context) =>
-                                  const ChooseModePage()));
+                                  const SignupOrSigninPage()));
                     },
                     title: 'Continue')
               ],
