@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "350586222314",
+    "project_id": "richard-spotify-12345",
+    "storage_bucket": "richard-spotify-12345.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350586222314:android:00da450d69edffd95ec993",
+        "android_client_info": {
+          "package_name": "com.richard.s"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9y4qALkf0Oq-7aT-GbpQybq3ZguehfJI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
