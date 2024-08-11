@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:spotify/common/widgets/appbar/app_bar.dart';
 import 'package:spotify/common/widgets/button/basic_app_button.dart';
@@ -29,7 +28,7 @@ class SignupPage extends StatelessWidget {
           width: 40,
         ),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -52,9 +51,6 @@ class SignupPage extends StatelessWidget {
             ),
             BasicAppButton(
                 onPressed: () async {
-                  print('email: ${_emailController.text.toString()}');
-                  print('password: ${_passwordController.text.toString()}');
-                  print('fullName: ${_fullNameController.text.toString()}');
                   var result = await sl<SignupUseCase>().call(
                     params: CreateUserReq(
                       email: _emailController.text.toString(),
@@ -69,10 +65,8 @@ class SignupPage extends StatelessWidget {
                         backgroundColor: Colors.red,
                       );
                       ScaffoldMessenger.of(context).showSnackBar(snackbar);
-                      print('Error: ${l.toString()}');
                     },
                     (r) {
-                      print('Success: ${r.toString()}');
                       var snackbar = SnackBar(
                         content: Text(r.toString()),
                         backgroundColor: Colors.green,
@@ -151,7 +145,7 @@ class SignupPage extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const SigninPage(),
+                  builder: (context) => SigninPage(),
                 ),
               );
             },
