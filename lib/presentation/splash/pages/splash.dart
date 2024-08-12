@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
+import 'package:spotify/presentation/home/pages/home.dart';
 import 'package:spotify/presentation/intro/pages/get_started.dart';
 
 class SplashPage extends StatefulWidget {
@@ -28,9 +29,8 @@ class _SplashPageState extends State<SplashPage> {
 
   Future<void> Redirect() async {
     await Future.delayed(const Duration(seconds: 2));
-    Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-            builder: (BuildContext context) => const GetStartedPage()));
+    Navigator.pushReplacement(context,
+        MaterialPageRoute(builder: (BuildContext context) => const HomePage()));
+    // builder: (BuildContext context) => const GetStartedPage()));
   }
 }
