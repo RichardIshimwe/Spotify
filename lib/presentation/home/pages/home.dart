@@ -5,6 +5,7 @@ import 'package:spotify/common/widgets/button/helpers/is_dark_mode.dart';
 import 'package:spotify/core/configs/assets/app_images.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
 import 'package:spotify/core/configs/theme/app_colors.dart';
+import 'package:spotify/presentation/home/widgets/news_songs.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,8 +14,9 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
-  late TabController _tabController ;
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
 
   @override
   void initState() {
@@ -36,9 +38,22 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [_homeTopCard(), 
-          
-          _tabs()],
+          children: [
+            _homeTopCard(),
+            _tabs(),
+            SizedBox(
+              height: 260,
+              child: TabBarView(
+                controller: _tabController,
+                children: [
+                  const NewsSongs(),
+                  Container(),
+                  Container(),
+                  Container()
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );
@@ -67,16 +82,26 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
 
   Widget _tabs() {
     return TabBar(
-      controller: _tabController,
-      isScrollable: true,
-      indicatorColor: AppColors.primary,
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 40),
-      labelColor: context.isDarkMode ? Colors.white : Colors.black,
-      tabs: const [
-      Text('News', style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),),
-      Text('Videos', style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),),
-      Text('Artists', style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),),
-      Text('Podcasts', style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16)),
-    ]);
+        controller: _tabController,
+        isScrollable: true,
+        indicatorColor: AppColors.primary,
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 40),
+        labelColor: context.isDarkMode ? Colors.white : Colors.black,
+        tabs: const [
+          Text(
+            'News',
+            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+          ),
+          Text(
+            'Videos',
+            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+          ),
+          Text(
+            'Artists',
+            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+          ),
+          Text('Podcasts',
+              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16)),
+        ]);
   }
 }
