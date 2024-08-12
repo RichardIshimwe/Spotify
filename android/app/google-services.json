@@ -1,26 +1,36 @@
 {
   "project_info": {
-    "project_number": "350586222314",
-    "project_id": "richard-spotify-12345",
-    "storage_bucket": "richard-spotify-12345.appspot.com"
+    "project_number": "672474191337",
+    "project_id": "portfolio-81ac3",
+    "storage_bucket": "portfolio-81ac3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:350586222314:android:00da450d69edffd95ec993",
+        "mobilesdk_app_id": "1:672474191337:android:780543c819d44fff37e778",
         "android_client_info": {
-          "package_name": "com.richard.s"
+          "package_name": "com.ishimweRichard.spotify"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "672474191337-gueilsvbb8blns5s7ff7j7iknhe2o1o4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyD9y4qALkf0Oq-7aT-GbpQybq3ZguehfJI"
+          "current_key": "AIzaSyCefMnBbRtb9q0Sar3rDW932D8z_JuC9fM"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672474191337-gueilsvbb8blns5s7ff7j7iknhe2o1o4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

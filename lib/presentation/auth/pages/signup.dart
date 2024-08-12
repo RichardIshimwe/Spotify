@@ -62,7 +62,6 @@ class SignupPage extends StatelessWidget {
                     (l) {
                       var snackbar = SnackBar(
                         content: Text(l.toString()),
-                        backgroundColor: Colors.red,
                       );
                       ScaffoldMessenger.of(context).showSnackBar(snackbar);
                     },
